@@ -1,0 +1,14 @@
+<mat-card>
+  <form (submit)="onSaveComment()" [formGroup]="form">
+    <mat-form-field>
+      <textarea matInput rows="6" formControlName="context" placeholder="Context"></textarea>
+      <mat-error *ngIf="form.get('context')">Please enter comment</mat-error>
+    </mat-form-field>
+    <div>
+  <button mat-raised-button color="primary" type="submit">Save Comment</button>
+</div>
+  </form>
+</mat-card>
+<mat-card *ngFor="let comment of comments">
+    {{ comment.context }}
+</mat-card>
